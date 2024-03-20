@@ -13,19 +13,16 @@ import axios from "axios";
 const host = process.env.HOST;
 const port = process.env.PORT;
 
-const server = http.createServer((request,response) => {
+const server = http.createServer((request, response) => {
   fs.readFile("users.json", "utf-8", (err, data) => {
     if (err) throw err;
     response.end(data);
   });
-})
-
-
+});
 
 server.listen(port, host, () => {
   console.log(`Server is running on http://${host}:${port}`);
 });
-
 
 const apiCall = async () => {
   try {
@@ -34,24 +31,18 @@ const apiCall = async () => {
     );
 
     // console.log(response);
-    fs.writeFile("users.json",JSON.stringify (response.data), "utf-8", (err) => {
-      if (err) throw err;
-      console.log("Data has been written to the file");
-    });
+    fs.writeFile(
+      "users.json",
+      JSON.stringify(response.data),
+      "utf-8",
+      (err) => {
+        if (err) throw err;
+        console.log("Data has been written to the file");
+      }
+    );
   } catch (err) {
     console.error(err);
   }
 };
 
 apiCall();
-
-
-
-
-
-
-
-
-
-
-

@@ -1,6 +1,14 @@
-import express from "express";
+import express, { request } from "express";
+import 'dotenv/config'
 
 const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+const port = process.env.PORT || 3000;
+const host = process.env.HOST || "localhost";
+
 
 const cars = [
   { id: 1, brand: "Toyota", model: "Corolla" },
@@ -40,7 +48,9 @@ app.get("/", (request, response) => {
 
 app.get("/cars", (request, response) => {
   response.json(cars);
+  
 });
+
 
 app.get("/cars/:carsID", (request, response) => {
   const carId = request.params.carsID;
@@ -49,6 +59,21 @@ app.get("/cars/:carsID", (request, response) => {
   response.json(car);
 });
 
-app.listen(3000, () => {
+app.post("/cars", (request, response) => {
+  console.log(request.body);
+  const newCar = {
+    id: cars.length + 1,
+    brand: request.body.brand,
+    model: request.body.model,
+  };
+
+  cars.push(newCar);
+  response.json(newCar);
+}
+);
+
+app.listen(port,host, () => {
   console.log("Server is running on port 3000");
 });
+
+
