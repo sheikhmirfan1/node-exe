@@ -52,6 +52,7 @@ app.post("/cars", (request, response) => {
     id: cars.length + 1,
     brand: request.body.brand,
     model: request.body.model,
+    year: request.body.year,
   };
 
   cars.push(newCar);
