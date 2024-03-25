@@ -1,9 +1,9 @@
 import express, { request } from "express";
 import "dotenv/config";
 import cors from "cors";
-app.use("/static", express.static("public"));
 
 const app = express();
+app.use(express.static("public"));
 
 app.use(cors());
 
@@ -20,7 +20,7 @@ const cars = [
     model: "Corolla",
     year: 2021,
     URL: "https://www.toyota.com/corolla/",
-    Image: "./asset/corolla.png",
+    Image: "asset/corolla.png",
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const cars = [
     model: "Camry",
     year: 2022,
     URL: "https://www.toyota.com/camry/",
-    Image: "./asset/camery.png",
+    Image: "asset/camery.png",
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const cars = [
     model: "Rav4",
     year: 2022,
     URL: "https://www.toyota.com/rav4/",
-    Image: "./asset/rav4.png",
+    Image: "asset/rav4.png",
   },
   {
     id: 4,
@@ -182,8 +182,6 @@ app.post("/cars", (request, response) => {
     model: request.body.model,
     year: request.body.year,
   };
-
-
 
   cars.push(newCar);
   response.json(newCar);
