@@ -44,7 +44,7 @@ const cars = [
     model: "Highlander",
     year: 2022,
     URL: "https://www.toyota.com/highlander/",
-    Image: "./asset/highlander.png",
+    Image: "asset/highlander.png",
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const cars = [
     model: "bZ4X",
     year: 2023,
     URL: "https://www.toyota.com/bZ4X/",
-    Image: "./asset/bZ4X.png",
+    Image: "asset/bZ4X.png",
   },
   {
     id: 6,
@@ -60,7 +60,7 @@ const cars = [
     model: "Crown",
     year: 2023,
     URL: "https://www.toyota.com/ToyotaCrown/",
-    Image: "./asset/crown.png",
+    Image: "asset/crown.png",
   },
   {
     id: 7,
@@ -68,7 +68,7 @@ const cars = [
     model: "Tundra",
     year: 2023,
     URL: "https://www.toyota.com/tundra/",
-    Image: "./asset/tundra.png",
+    Image: "asset/tundra.png",
   },
   {
     id: 8,
@@ -76,7 +76,7 @@ const cars = [
     model: "Sienna",
     year: 2023,
     URL: "https://www.toyota.com/sienna/",
-    Image: "./asset/siena.png",
+    Image: "asset/siena.png",
   },
   {
     id: 9,
@@ -84,7 +84,7 @@ const cars = [
     model: "Sequoia",
     year: 2023,
     URL: "https://www.toyota.com/sequoia/",
-    Image: "./asset/siena.png",
+    Image: "asset/siena.png",
   },
   {
     id: 10,
@@ -92,7 +92,7 @@ const cars = [
     model: "Land Cruiser",
     year: 2024,
     URL: "https://www.toyota.com/landcruiser/",
-    Image: "./asset/lanc.png",
+    Image: "asset/lanc.png",
   },
   {
     id: 11,
@@ -100,7 +100,7 @@ const cars = [
     model: "Supra",
     year: 2024,
     URL: "https://www.toyota.com/supra/",
-    Image: "./asset/supra.png",
+    Image: "asset/supra.png",
   },
   {
     id: 12,
@@ -108,7 +108,7 @@ const cars = [
     model: "86",
     year: 2024,
     URL: "https://www.toyota.com/86/",
-    Image: "./asset/86.png",
+    Image: "asset/86.png",
   },
   {
     id: 13,
@@ -124,7 +124,7 @@ const cars = [
     model: "Avalon",
     year: 2024,
     URL: "https://www.toyota.com/avalon/",
-    Image: "./asset/AVA_MY19_0023_V002.jpeg",
+    Image: "asset/AVA_MY19_0023_V002.jpeg",
   },
   {
     id: 15,
@@ -132,7 +132,7 @@ const cars = [
     model: "Prius",
     year: 2024,
     URL: "https://www.toyota.com/prius/",
-    Image: "./asset/prius.png",
+    Image: "asset/prius.png",
   },
   {
     id: 16,
@@ -140,7 +140,7 @@ const cars = [
     model: "Mirai",
     year: 2020,
     URL: "https://www.toyota.com/mirai/",
-    Image: "./asset/mirai.png",
+    Image: "asset/mirai.png",
   },
   {
     id: 17,
@@ -148,7 +148,7 @@ const cars = [
     model: "C-HR",
     year: 2024,
     URL: "https://www.toyota.com/c-hr/",
-    Image: "./asset/2024-Toyota-C-HR-1.jpg",
+    Image: "asset/2024-Toyota-C-HR-1.jpg",
   },
   {
     id: 18,
@@ -156,7 +156,7 @@ const cars = [
     model: "RAV4 Prime",
     year: 2024,
     URL: "https://www.toyota.com/rav4-prime/",
-    Image: "./asset/rav4 prime.png",
+    Image: "asset/rav4 prime.png",
   },
 ];
 app.get("/", (request, response) => {
