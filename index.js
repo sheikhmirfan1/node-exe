@@ -1,48 +1,65 @@
-import http from "http";
+import express, { request } from "express";
 import "dotenv/config";
-import fs from "fs";
-import axios from "axios";
+import cors from "cors";
 
-// const server = http.createServer((req, res) => {
-//     res.end('Hello World');
-// });
+const app = express();
 
-// server.listen(3000, 'localhost', () => {
-//     console.log('Server is running on port 3000');
-// })
-const host = process.env.HOST;
-const port = process.env.PORT;
+app.use(cors());
 
-const server = http.createServer((request, response) => {
-  fs.readFile("users.json", "utf-8", (err, data) => {
-    if (err) throw err;
-    response.end(data);
-  });
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+const port = process.env.PORT || 3000;
+const host = process.env.HOST || "localhost";
+
+const cars = [
+  { id: 1, brand: "Toyota", model: "Corolla", year: 2021 },
+  { id: 2, brand: "Toyota", model: "Camry", year: 2022 },
+  { id: 3, brand: "Toyota", model: "Rav4", year: 2022 },
+  { id: 4, brand: "Toyota", model: "Highlander", year: 2022 },
+  { id: 5, brand: "Toyota", model: "4Runner", year: 2023 },
+  { id: 6, brand: "Toyota", model: "Tacoma", year: 2023 },
+  { id: 7, brand: "Toyota", model: "Tundra", year: 2023 },
+  { id: 8, brand: "Toyota", model: "Sienna", year: 2023 },
+  { id: 9, brand: "Toyota", model: "Sequoia", year: 2023 },
+  { id: 10, brand: "Toyota", model: "Land Cruiser", year: 2024 },
+  { id: 11, brand: "Toyota", model: "Supra", year: 2024 },
+  { id: 12, brand: "Toyota", model: "86", year: 2024 },
+  { id: 13, brand: "Toyota", model: "Yaris", year: 2024 },
+  { id: 14, brand: "Toyota", model: "Avalon", year: 2024 },
+  { id: 15, brand: "Toyota", model: "Prius", year: 2024 },
+  { id: 16, brand: "Toyota", model: "Mirai", year: 2020 },
+  { id: 17, brand: "Toyota", model: "C-HR", year: 2024 },
+  { id: 18, brand: "Toyota", model: "RAV4 Prime", year: 2024 },
+];
+app.get("/", (request, response) => {
+  response.send("Hello World");
 });
 
-server.listen(port, host, () => {
-  console.log(`Server is running on http://${host}:${port}`);
+app.get("/cars", (request, response) => {
+  response.json(cars);
 });
 
-const apiCall = async () => {
-  try {
-    const response = await axios.get(
-      "https://jsonplaceholder.typicode.com/users"
-    );
+app.get("/cars/:carsID", (request, response) => {
+  const carId = request.params.carsID;
+  const car = cars.find((car) => car.id === parseInt(carId));
 
-    // console.log(response);
-    fs.writeFile(
-      "users.json",
-      JSON.stringify(response.data),
-      "utf-8",
-      (err) => {
-        if (err) throw err;
-        console.log("Data has been written to the file");
-      }
-    );
-  } catch (err) {
-    console.error(err);
-  }
-};
+  response.json(car);
+});
 
-apiCall();
+app.post("/cars", (request, response) => {
+  console.log(request.body);
+  const newCar = {
+    id: cars.length + 1,
+    brand: request.body.brand,
+    model: request.body.model,
+    year: request.body.year,
+  };
+
+  cars.push(newCar);
+  response.json(newCar);
+});
+
+app.listen(port, host, () => {
+  console.log("Server is running on port 3000");
+});
