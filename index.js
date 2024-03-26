@@ -84,7 +84,7 @@ const cars = [
     model: "Sequoia",
     year: 2023,
     URL: "https://www.toyota.com/sequoia/",
-    Image: "asset/siena.png",
+    Image: "asset/seqa.png",
   },
   {
     id: 10,
