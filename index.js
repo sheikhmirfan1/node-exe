@@ -60,7 +60,7 @@ const cars = [
     model: "Crown",
     year: 2023,
     URL: "https://www.toyota.com/ToyotaCrown/",
-    Image: "asset/crown.png",
+    Image: "asset/crwon.png",
   },
   {
     id: 7,
@@ -116,7 +116,7 @@ const cars = [
     model: "Yaris",
     year: 2024,
     URL: "https://www.toyota.com/venza/",
-    Image: "./asset/venza.png",
+    Image: "asset/venza.png",
   },
   {
     id: 14,
