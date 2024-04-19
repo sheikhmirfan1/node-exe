@@ -1,6 +1,6 @@
 import express, { request } from "express";
 import "dotenv/config";
-import cors from "cors";
+import cors from "cornpm
 
 const app = express();
 app.use(express.static("public"));
@@ -21,6 +21,8 @@ const cars = [
     year: 2021,
     URL: "https://www.toyota.com/corolla/",
     Image: "asset/corolla.png",
+    price: "10000€",
+    kilometers: "1000km",
   },
   {
     id: 2,
@@ -29,6 +31,8 @@ const cars = [
     year: 2022,
     URL: "https://www.toyota.com/camry/",
     Image: "asset/camery.png",
+    price: "20000€",
+    kilometers: "2000km",
   },
   {
     id: 3,
@@ -37,6 +41,8 @@ const cars = [
     year: 2022,
     URL: "https://www.toyota.com/rav4/",
     Image: "asset/rav4.png",
+    price: "30000€",
+    kilometers: "1000km",
   },
   {
     id: 4,
@@ -45,6 +51,8 @@ const cars = [
     year: 2022,
     URL: "https://www.toyota.com/highlander/",
     Image: "asset/highlander.png",
+    price: "40000€",
+    kilometers: "100km",
   },
   {
     id: 5,
@@ -53,6 +61,8 @@ const cars = [
     year: 2023,
     URL: "https://www.toyota.com/bZ4X/",
     Image: "asset/bZ4X.png",
+    price: "45000€",
+    kilometers: "200km",
   },
   {
     id: 6,
@@ -61,6 +71,8 @@ const cars = [
     year: 2023,
     URL: "https://www.toyota.com/ToyotaCrown/",
     Image: "asset/crwon.png",
+    price: "50000€",
+    kilometers: "30km",
   },
   {
     id: 7,
@@ -69,6 +81,8 @@ const cars = [
     year: 2023,
     URL: "https://www.toyota.com/tundra/",
     Image: "asset/tundra.png",
+    price: "45000€",
+    kilometers: "40km",
   },
   {
     id: 8,
@@ -77,6 +91,8 @@ const cars = [
     year: 2023,
     URL: "https://www.toyota.com/sienna/",
     Image: "asset/siena.png",
+    price: "40000€",
+    kilometers: "50km",
   },
   {
     id: 9,
@@ -85,6 +101,8 @@ const cars = [
     year: 2023,
     URL: "https://www.toyota.com/sequoia/",
     Image: "asset/seqa.png",
+    price: "70000€",
+    kilometers: "60km",
   },
   {
     id: 10,
@@ -93,6 +111,9 @@ const cars = [
     year: 2024,
     URL: "https://www.toyota.com/landcruiser/",
     Image: "asset/lanc.png",
+    price: "80000€",
+    kilometers: "70km",
+
   },
   {
     id: 11,
@@ -101,6 +122,9 @@ const cars = [
     year: 2024,
     URL: "https://www.toyota.com/supra/",
     Image: "asset/supra.png",
+    price: "60000€",
+    kilometers: "80km",
+
   },
   {
     id: 12,
@@ -109,6 +133,8 @@ const cars = [
     year: 2024,
     URL: "https://www.toyota.com/86/",
     Image: "asset/86.png",
+    price: "50000€",
+    kilometers: "90km",
   },
   {
     id: 13,
@@ -117,6 +143,8 @@ const cars = [
     year: 2024,
     URL: "https://www.toyota.com/venza/",
     Image: "asset/venza.png",
+    price: "30000€",
+    kilometers: "100km",
   },
   {
     id: 14,
@@ -125,6 +153,8 @@ const cars = [
     year: 2024,
     URL: "https://www.toyota.com/avalon/",
     Image: "asset/AVA_MY19_0023_V002.jpeg",
+    price: "45000€",
+    kilometers: "100km",
   },
   {
     id: 15,
@@ -133,6 +163,8 @@ const cars = [
     year: 2024,
     URL: "https://www.toyota.com/prius/",
     Image: "asset/prius.png",
+    price: "20000€",
+    kilometers: "100km",
   },
   {
     id: 16,
@@ -141,6 +173,8 @@ const cars = [
     year: 2020,
     URL: "https://www.toyota.com/mirai/",
     Image: "asset/mirai.png",
+    price: "50000€",
+    kilometers: "10km", 
   },
   {
     id: 17,
@@ -149,6 +183,8 @@ const cars = [
     year: 2024,
     URL: "https://www.toyota.com/c-hr/",
     Image: "asset/2024-Toyota-C-HR-1.jpg",
+    price: "38000€",
+    kilometers: "100km",
   },
   {
     id: 18,
@@ -157,6 +193,8 @@ const cars = [
     year: 2024,
     URL: "https://www.toyota.com/rav4-prime/",
     Image: "asset/rav4 prime.png",
+    price: "45000€",
+    kilometers: "100km",
   },
 ];
 app.get("/", (request, response) => {
