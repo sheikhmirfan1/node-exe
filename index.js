@@ -1,6 +1,6 @@
 import express, { request } from "express";
 import "dotenv/config";
-import cors from "cornpm
+import cors from "cors";
 
 const app = express();
 app.use(express.static("public"));
